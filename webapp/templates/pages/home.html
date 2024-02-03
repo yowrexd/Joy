@@ -1,0 +1,48 @@
+{% extends 'pages/index.html' %}
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+
+<section id="hero">
+  <div class="hero-content">
+      <h1>Welcome to Our Website</h1>
+      <p>Discover a world of innovation and creativity.</p>
+      <a class="btn" href="{% url 'login' %}">Get Started</a>
+      
+  </div>
+</section>
+
+
+
+
+<section id="features">
+  <div class="feature">
+      <i class="fas fa-cogs"></i>
+      <h2>Efficiency</h2>
+      <p>Streamline your workflow with our efficient solutions.</p>
+  </div>
+
+  <div class="feature">
+      <i class="fas fa-chart-line"></i>
+      <h2>Growth</h2>
+      <p>Experience exponential growth with our strategic approach.</p>
+  </div>
+
+  <div class="feature">
+      <i class="fas fa-users"></i>
+      <h2>Community</h2>
+      <p>Join a vibrant community of like-minded individuals.</p>
+  </div>
+</section>
+
+<section id="testimonial">
+  <div class="testimonial-content">
+      <p>"I am thrilled with the final product, and it's evident that your team went above and beyond to ensure not only a successful outcome but also a positive and collaborative experience throughout the entire process.
+
+        Thank you for making this journey a seamless and enjoyable one. I look forward to future collaborations and will not hesitate to recommend PRMS to others seeking top-notch service."</p>
+      <cite>- Happy Client</cite>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'pages/index.html' %}
+{% block content %}
+{% load static %}
+
+<p>Are you sure you want to delete {{patients}}?</p>
+
+<form method="POST">
+    {% csrf_token %}
+    <a href="{% url 'patient' %}">cancel</a>
+<input type="submit" name="Confirm">
+</form>
+
+{% endblock %}

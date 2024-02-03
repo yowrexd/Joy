@@ -1,0 +1,15 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
+<div class="navbar">
+    <img src = "{% static 'image/logo.png' %}" alt="logo" width="150px" height="150px">
+    <div class="navtitle"> <h1> PATIENT RECORD MANAGEMENT SYSTEM</h1> </div>
+    <div class="navbar-links">
+        <a class="navbar-link" href="{% url 'home_page' %}">Home</a>
+        <a class="navbar-link" href="{% url 'services' %}">Services</a>
+        <a class="navbar-link" href="{% url 'patient' %}">Patient</a>
+        <a class="navbar-link" href="{% url 'form' %}">Forms</a>
+        <a class="navbar-link" href="{% url 'about_page' %}">About</a>
+        <a class="navbar-link" href="{% url 'contact_page' %}">Contact</a>
+    </div>
+</div>
+

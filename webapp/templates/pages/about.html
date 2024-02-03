@@ -1,0 +1,54 @@
+{% extends 'pages/index.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+
+
+<div class="container">
+  <section id="about">
+    <h1>About Our Patient Record<br>Management System</h1>
+    <p>
+      Welcome to our Patient Record Management System, where we prioritize efficiency, security, and user-friendly experiences in managing patient information. Our system is designed to simplify the complexities of healthcare data management, ensuring healthcare professionals have the tools they need to provide optimal patient care.
+    </p>
+  </section>
+
+  <section id="features">
+    <h2>Key Features</h2>
+    <ul>
+      <li>Comprehensive Patient Profiles</li>
+      <li>Appointment Scheduling and Reminders</li>
+      <li>Secure Data Encryption</li>
+      <li>Collaborative Health Records</li>
+      <li>User-Friendly Interface</li>
+      <li>Efficient Search and Reporting</li>
+    </ul>
+  </section>
+
+  <section id="benefits">
+    <h2>Benefits</h2>
+    <ul>
+      <li>Enhanced Patient Care</li>
+      <li>Streamlined Workflow for Healthcare Providers</li>
+      <li>Improved Data Accuracy</li>
+      <li>Time and Cost Efficiency</li>
+      <li>Adherence to Privacy Regulations</li>
+    </ul>
+  </section>
+
+  <section id="team">
+    <div class="team-member">
+    <h2>Meet Our Team</h2><br><br><br>
+      <h3>Yuri Santos</h3>
+      <p>Member 1</p>
+    </div>
+
+    <div class="team-member">
+      <h3>Cielo Magallanes</h3>
+      <p>Member 2</p>
+    </div>
+  </section>
+</div>
+
+<script src="{% static 'js/about.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends 'pages/index.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/patient.css' %}">
+<script src="{% static 'js/patient.js' %}"></script>
+
+<div class="container">
+
+  <div class="page-header">
+      <h1>Medical Dashboard</h1>
+  </div>
+
+  <div class="statistics">
+      <div class="statistics-box">
+          <h2>Total Patients</h2>
+          <p>{{ total_patientinfo }}</p>
+      </div>
+      <div class="statistics-box">
+          <h2>Total Appointments</h2>
+          <p>{{ total_appointment }}</p>
+      </div>
+  </div>
+
+<!-- Add a class to the table for styling -->
+<table class="patient-info-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Contact</th>
+            <th>Email</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for patients in patientinfo %}
+        <tr>
+            <td>{{ patients.id }}</td>
+            <td>{{ patients.name }}</td>
+            <td>{{ patients.age }}</td>
+            <td>{{ patients.gender }}</td>
+            <td>{{ patients.contact }}</td>
+            <td>{{ patients.address }}</td>
+            <td><a href="{% url 'update' patients.id %}">update</a></td>
+            <td><a href="{% url 'delete' patients.id %}">delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+<br><br><br>
+<div class="appointments-container">
+<table class="appointment-info-table">
+  <div class="appointment-card">
+    <h1 class="appointment-heading">Active Appointments</h1>
+  <thead>
+    <tr>
+        <th>Patient Info</th>
+        <th>Doctor</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Reason</th>
+        
+    </tr>
+</thead>
+<tbody>
+  {% for appointment in appointment %}
+  <tr>
+      
+      <td>{{ appointment.patientinfo.name }}</td>
+      <td>{{ appointment.doctor }}</td>
+      <td>{{ appointment.date }}</td>
+      <td>{{ appointment.time }}</td>
+      <td>{{ appointment.reason }}</td>
+      
+  </tr>
+  {% endfor %}
+</tbody>
+</table>
+</div>
+</div>
+
+
+
+{% endblock %}
